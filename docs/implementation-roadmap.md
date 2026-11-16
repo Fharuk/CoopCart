@@ -30,8 +30,8 @@
 
 - GitHub remote is `Fharuk/CoopCart`; this work stays on the active Arena branch. Changes are not pushed or released without an explicit deployment/release decision.
 - A dedicated Supabase project, **CoopCart Prelaunch**, now exists in `eu-west-1`. The `lagos_discovery` migration (`20261116154807`) is applied; its 20 areas are all `waitlist`, there are zero offers, and anonymous/authenticated roles have SELECT-only RLS policies. The project contains no customer data. Its EU region and any later personal-data processing still require privacy/data-transfer review.
-- The connected Vercel account has no CoopCart project. Existing projects are unrelated; do **not** reuse, edit, or deploy to them. No Vercel project or deployment has been created.
-- The local environment uses a publishable Supabase key stored in ignored `.env.local`; the code reads only public area statuses and is RLS constrained. Do not commit `.env.local` or expose a service-role key. No personal-data capture, production deployment, or payment capability is active.
+- A dedicated Vercel project, `coopcart-prelaunch`, is connected to the GitHub repository. A private branch preview for the active Arena branch is READY at [this deployment](https://coopcart-prelaunch-bjrq19vxf-fharuks-projects.vercel.app); it is protected by Vercel login and is not a public launch. Supabase public-read environment variables are configured; live offers remain gated off. The deployment is in Vercel's default `iad1` region, while Supabase is in `eu-west-1`; revisit regional placement if plan/settings permit.
+- The local environment uses a publishable Supabase key stored in ignored `.env.local`; the code reads only public area statuses and is RLS constrained. Do not commit `.env.local` or expose a service-role key. No personal-data capture, public production launch, or payment capability is active.
 
 ## Current truth
 
