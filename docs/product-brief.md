@@ -25,9 +25,9 @@ Earlier planning documents describe a CoopCart-controlled escrow-like hold/relea
 
 Treat the later assessment as a serious risk flag, not legal advice or final approval. Do not implement payments, escrow, wallet balances, refunds, payout logic, or claims of “escrow protection” without written provider approval and Nigerian counsel sign-off for the exact merchant/fund flow. Product copy must not promise guaranteed savings/refunds unsupported by that approved arrangement. The current interface reads area statuses from a dedicated Supabase project (all 20 LGAs are waitlist-only), provides local-only area search/selection, and shows no offer amounts because the database has none. It is still a prelaunch preview: no signup, orders, checkout, or personal data collection.
 
-## Prototype built in this branch
+## Current implementation in this branch
 
-A responsive Next.js prototype at `/` demonstrates offer discovery, category filtering, text search, illustrative pool progress, an offer-detail dialog, and a locally simulated “count me in” state. No backend, authentication, persistence, supplier data, or payment integration is implemented. All shown pool data is fictional sample content; replace it with verified live offers before any public launch.
+The current `/` experience is a prelaunch, read-only area discovery page. It loads public LGA status from the dedicated Supabase project when reachable and fails closed to waitlist states. The database currently has 20 LGAs marked `waitlist`, no offers, and no customer data. Offer display is disabled by default; there is no account, signup, order, reservation, checkout, or payment flow. Do not describe the interface as showing live supplier availability. See `implementation-roadmap.md` for deployment details and `launch-sequence-plan.md` for the recommended non-transactional pilot sequence.
 
 ## Next decisions / gates
 
