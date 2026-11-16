@@ -13,7 +13,8 @@ function formatDate(value: string): string {
 }
 
 export function OfferBoard({ offers, areas }: { offers: PublicOffer[]; areas: Area[] }) {
-  const areaNames = new Map(areas.flatMap((area) => area.id ? [[area.id, area.name] as const] : []));
+  const activeAreaNames = new Map(areas.flatMap((area) => area.id && area.launchState === 'active' ? [[area.id, area.name] as const] : []));
+  const visibleOffers = offers.filter((offer) => activeAreaNames.has(offer.serviceAreaId));
 
   return (
     <section className="offers-section" id="offers" aria-labelledby="offers-title">
@@ -23,13 +24,13 @@ export function OfferBoard({ offers, areas }: { offers: PublicOffer[]; areas: Ar
           <h2 id="offers-title">Offers, when they’re ready.</h2>
           <p className="section-intro">We only list a supplier-confirmed offer in an area with confirmed coverage. No placeholder prices or made-up discounts.</p>
         </div>
-        <span className="offers-live-count"><span /> {offers.length} verified {offers.length === 1 ? 'offer' : 'offers'}</span>
+        <span className="offers-live-count"><span /> {visibleOffers.length} verified {visibleOffers.length === 1 ? 'offer' : 'offers'}</span>
       </div>
-      {offers.length === 0 ? (
+      {visibleOffers.length === 0 ? (
         <div className="no-offers"><span className="no-offers-icon"><PackageCheck size={21} /></span><div><strong>No verified offers are live yet.</strong><p>We’re checking local supplier and fulfilment details before publishing anything. Check back soon.</p></div></div>
       ) : (
-        <div className="offers-grid">{offers.map((offer) => {
-          const areaName = areaNames.get(offer.serviceAreaId) ?? 'Lagos';
+        <div className="offers-grid">{visibleOffers.map((offer) => {
+          const areaName = activeAreaNames.get(offer.serviceAreaId)!;
           const showComparator = offer.comparatorPriceKobo !== null && offer.comparatorCheckedAt !== null && offer.comparatorDescription !== null && offer.comparatorEvidenceUrl !== null;
           return <article className="offer-card" key={offer.id}>
             <div className="offer-card-top"><span>{offer.category}</span><span><MapPin size={13}/>{areaName}</span></div>

@@ -2,14 +2,25 @@
 
 A mobile-first neighborhood bulk-buying platform in prelaunch development for Lagos, Nigeria. See [`docs/product-brief.md`](docs/product-brief.md) for the Drive planning-pack summary, payment-safety boundary, and product scope.
 
-## Run the prototype
+## Run locally
 
 ```bash
-npm install
+npm ci
 npm run dev
 ```
 
-Open the local URL printed by Next.js. The landing/discovery UI reads public area-status records from the dedicated Supabase project when reachable (otherwise it fails closed to waitlist status). It currently shows no offers, collects no personal data, and has no accounts or checkout.
+Open the local URL printed by Next.js. The landing/discovery UI reads public area-status records from the dedicated Supabase project when reachable. If the database is unavailable, it explicitly shows the waitlist-only fallback. Search and area selection stay in the browser. Offers remain disabled by default; there is no signup, personal-data capture, account, reservation, order, checkout, or payment flow.
+
+## Verify changes
+
+```bash
+npm test
+npm run lint
+npm run build
+npm audit --audit-level=high
+```
+
+GitHub Actions runs the same checks on pushes and pull requests. See [`docs/launch-sequence-plan.md`](docs/launch-sequence-plan.md) and [`docs/pilot-validation-tracker.csv`](docs/pilot-validation-tracker.csv) for the approved no-payment, dry-staple/pickup pilot preparation and LGA-by-LGA evidence checklist.
 
 ## Project guidance
 

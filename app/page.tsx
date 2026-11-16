@@ -9,11 +9,11 @@ export const dynamic = 'force-dynamic';
 const steps = [
   { number: '01', icon: <Users size={20} />, title: 'Neighbours make a group', text: 'People nearby come together around the same everyday needs.' },
   { number: '02', icon: <ShoppingBasket size={20} />, title: 'Suppliers confirm an offer', text: 'The seller, exact goods, final price and pickup details are made clear first.' },
-  { number: '03', icon: <WalletCards size={20} />, title: 'You decide what’s right', text: 'Review the confirmed details before choosing whether to buy. There is no checkout here yet.' },
+  { number: '03', icon: <WalletCards size={20} />, title: 'A future choice, with full details', text: 'The proposed experience puts confirmed seller, item, price and pickup information first. No buying or booking happens in this preview.' },
 ];
 
 export default async function Home() {
-  const [{ areas }, offers] = await Promise.all([getLagosAreas(), getPublishedOffers()]);
+  const [{ areas, source }, offers] = await Promise.all([getLagosAreas(), getPublishedOffers()]);
 
   return (
     <main>
@@ -48,7 +48,7 @@ export default async function Home() {
         <div className="principle"><span className="principle-icon"><CircleHelp size={18}/></span><span><b>Still getting ready</b><small>We’ll be honest about what’s live</small></span></div>
       </div>
 
-      <AreaBrowser areas={areas} />
+      <AreaBrowser areas={areas} source={source} />
       <OfferBoard offers={offers} areas={areas} />
 
       <section className="how-section" id="how-it-works">
