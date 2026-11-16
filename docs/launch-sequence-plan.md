@@ -20,6 +20,8 @@
 
 ## Sequence 2 — Run a no-payment, concierge pilot
 
+A blank 20-LGA sourcing/verification template is available at `pilot-validation-tracker.csv`. It contains no supplier or availability claims. Keep supplier evidence current and do not put private individuals' contact details or customer data in Git; the tracker is for business-level verification notes and public source references only.
+
 ### Before recruiting participants
 
 1. Select one neighborhood only after confirming the team can actually operate there; identify a real supplier willing to participate.
