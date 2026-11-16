@@ -1,7 +1,7 @@
 # CoopCart launch sequence plan
 
-**Status:** planning only; no public release or cloud changes authorized by this document.
-**Recommendation:** begin with a public, read-only discovery experience and an offline concierge pilot. Do not begin with a transactional marketplace.
+**Status:** pilot direction approved: dry-staple, pickup-only, no-payment. CAC registration is underway. Neighborhood and supplier are not yet confirmed. This remains planning/research only; no public release or cloud changes are authorized by this document.
+**Recommendation:** prepare a public, read-only discovery experience and an offline concierge pilot. Do not begin with a transactional marketplace.
 
 ## Sequence 1 — Agree the launch model and confirm company status
 
@@ -12,10 +12,10 @@
 - **Claims:** coverage, availability, price comparisons, savings, and supplier status must be evidence-backed, dated, and scoped. Until a location is operationally verified, label it waitlist/coming soon.
 - **Money:** no CoopCart collection, holding, or transfer of customer funds. Keep the existing no-money-movement constraint unless the owner explicitly changes it after legal/provider review.
 
-### Owner confirmations still required
+### Owner confirmations and dependencies
 
-- Confirm CoopCart's CAC status and legal entity (if any), company name, and authorized decision-maker. This plan does not assume incorporation has occurred and does not file anything on the owner's behalf.
-- Confirm the pilot neighborhood and whether the recommended dry-staple basket/pickup-only test is acceptable.
+- CAC registration is underway; incorporation is not treated as complete until the owner confirms the certificate and final registered details. This plan does not file anything on the owner's behalf.
+- The owner approved the dry-staple, pickup-only, no-payment pilot. The neighborhood and actual supplier remain unconfirmed. Do not select or advertise a neighborhood based on guesswork: choose the first location only after the owner identifies a viable supplier/operating contact there and the team confirms it can safely support pickup.
 - Confirm permission before making any public release. Existing Vercel resources and deployments remain untouched.
 
 ## Sequence 2 — Run a no-payment, concierge pilot
