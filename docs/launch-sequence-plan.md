@@ -15,7 +15,7 @@
 ### Owner confirmations and dependencies
 
 - CAC registration is underway; incorporation is not treated as complete until the owner confirms the certificate and final registered details. This plan does not file anything on the owner's behalf.
-- The owner approved the dry-staple, pickup-only, no-payment pilot. The neighborhood and actual supplier remain unconfirmed. Do not select or advertise a neighborhood based on guesswork: choose the first location only after the owner identifies a viable supplier/operating contact there and the team confirms it can safely support pickup.
+- The owner approved the dry-staple, pickup-only, no-payment pilot and answered “all” when asked which Lagos neighborhood has a supplier or operating contact. Treat this as the intended all-Lagos scope / an owner-reported lead, **not verified coverage**: no neighborhood, supplier, or pickup capability has yet been independently identified in project records. The pilot itself remains a one-location test. Do not mark any LGA active or advertise supplier availability until named suppliers, product/price/stock evidence, and pickup capacity are verified area by area. Select the first pilot location from the verified candidates.
 - Confirm permission before making any public release. Existing Vercel resources and deployments remain untouched.
 
 ## Sequence 2 — Run a no-payment, concierge pilot
